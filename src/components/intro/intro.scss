@@ -1,0 +1,14 @@
+.intro {
+    color: #444451;
+    height: 100vh; // Sets this div to automatically take up the full height of the viewport
+}
+
+.intro-title {
+    font-size: 2.5rem;
+}
+
+.intro-body {
+    font-size: 1.5rem;
+    width: 50%;
+    overflow-wrap: normal;
+}
