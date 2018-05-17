@@ -1,0 +1,21 @@
+.experience-content {
+    font-size: 1.05rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .experience-content {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .experience-content {
+        font-size: .85rem;
+    }
+}
+
+.experience-name {
+    font-weight: 500;
+    padding-bottom: .25rem;
+    letter-spacing: 1px;
+}
