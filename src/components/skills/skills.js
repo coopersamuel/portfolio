@@ -115,7 +115,7 @@ export default withScrollReveal([
         delay: 200,
         easing: 'cubic-bezier(.694, 0, .335,1)',
         mobile: true,
-        viewFactor: 0.2,
+        viewFactor: 0.3,
       },
     },
 ])(Skills);
