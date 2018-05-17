@@ -9,7 +9,7 @@ const Intro = (props) => {
                     Hey! I'm <strong className="green">Sam</strong>,
                 </div>
                 <div className="intro-body">
-                    I'm a <strong className="green">Fullstack Developer</strong>. I write software to do all kinds of stuff, everything from intuitive user experiences to complex algorithms.
+                    I'm a <strong className="green">Fullstack Developer</strong>. I write software to do all sorts of things, everything from intuitive user experiences to complex algorithms.
                 </div>
                 <div className="intro-contact pt-5">
                     Let's get in touch!

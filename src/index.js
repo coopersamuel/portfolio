@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import Intro from './components/intro/intro';
 import About from './components/about/about';
 import Skills from './components/skills/skills';
+import Experience from './components/experience/experience';
 import './styles.scss';
 
 const App = () => {
@@ -15,6 +16,8 @@ const App = () => {
                     <About />
                     <div className="spacer">&nbsp;</div>
                     <Skills />
+                    <div className="spacer">&nbsp;</div>
+                    <Experience />
                     <div className="spacer">&nbsp;</div>
                 </div>
             </div>

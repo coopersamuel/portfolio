@@ -15,7 +15,7 @@ const Skills = (props) => {
                     <div className="row">
                         <div className="col-3">
                             <div className="skills-category">
-                                LANGUAGES
+                                Languages
                             </div>
                             <div className="skill">
                                 JavaScript
@@ -38,7 +38,7 @@ const Skills = (props) => {
                         </div>
                         <div className="col-3">
                             <div className="skills-category">
-                                LIBRARIES
+                                Libraries
                             </div>
                             <div className="skill">
                                 React
@@ -64,7 +64,7 @@ const Skills = (props) => {
                         </div>
                         <div className="col-3">
                             <div className="skills-category">
-                                BACKEND
+                                Backend
                             </div>
                             <div className="skill">
                                 Node
@@ -81,7 +81,7 @@ const Skills = (props) => {
                         </div>
                         <div className="col-3">
                             <div className="skills-category">
-                                TOOLS
+                                Tools
                             </div>
                             <div className="skill">
                                 Babel
