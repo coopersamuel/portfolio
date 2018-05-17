@@ -1,0 +1,25 @@
+.skills-content {
+    font-size: 1.05rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .skills-content {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .skills-content {
+        font-size: .85rem;
+    }
+}
+
+.skills-category {
+    font-weight: 500;
+    padding-bottom: .25rem;
+    letter-spacing: 1px;
+}
+
+.skill {
+    padding-bottom: .15rem;
+}
