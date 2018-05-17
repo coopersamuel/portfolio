@@ -1,17 +1,18 @@
 import React from 'react';
+import withScrollReveal from 'react-scrollreveal';
 import './about.scss';
 
-const About = (props) => {
+const About = ({ animationContainerReference }) => {
     return (
-        <div>
-            <div className="hidden-title pb-3">
+        <div ref={animationContainerReference}>
+            <div className="sr-item hidden-title pb-3">
                 About Me
             </div>
             <div className="row align-items-top">
-                <div className="col-4 title">
+                <div className="sr-item col-4 title">
                     <div className="float-right pr-5">About Me</div>
                 </div>
-                <div className="col about-content">
+                <div className="sr-item col about-content">
                     <p>
                         I started writing code several years ago with <strong>C++</strong>. 
                         Now, I build fullstack <strong>JavaScript</strong> applications using a host of modern technologies.
@@ -34,4 +35,15 @@ const About = (props) => {
     );
 }
 
-export default About;
+export default withScrollReveal([
+    {
+      selector: '.sr-item',
+      options: {
+        reset: false,
+        delay: 200,
+        easing: 'cubic-bezier(.694, 0, .335,1)',
+        mobile: true,
+        viewFactor: 0.1,
+      },
+    },
+])(About);
