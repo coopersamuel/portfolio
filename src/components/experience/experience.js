@@ -1,17 +1,18 @@
 import React from 'react';
+import withScrollReveal from 'react-scrollreveal';
 import './experience.scss';
 
-const Experience = (props) => {
+const Experience = ({ animationContainerReference }) => {
     return (
-        <div>
-            <div className="hidden-title pb-3">
+        <div ref={animationContainerReference}>
+            <div className="sr-item hidden-title pb-3">
                 Experience
             </div>
             <div className="row align-items-top">
-                <div className="col-4 title">
+                <div className="sr-item col-4 title">
                     <div className="float-right pr-5">Experience</div>
                 </div>
-                <div className="col experience-content">
+                <div className="sr-item col experience-content">
                     <div className="row pb-5">
                         <div className="col">
                             <div className="experience-name">
@@ -74,4 +75,15 @@ const Experience = (props) => {
     );
 }
 
-export default Experience;
+export default withScrollReveal([
+    {
+      selector: '.sr-item',
+      options: {
+        reset: false,
+        delay: 200,
+        easing: 'cubic-bezier(.694, 0, .335,1)',
+        mobile: true,
+        viewFactor: 0.25,
+      },
+    },
+])(Experience);

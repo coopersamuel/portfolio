@@ -1,17 +1,18 @@
 import React from 'react';
+import withScrollReveal from 'react-scrollreveal';
 import './skills.scss';
 
-const Skills = (props) => {
+const Skills = ({ animationContainerReference }) => {
     return (
-        <div>
-            <div className="hidden-title pb-3">
+        <div ref={animationContainerReference}>
+            <div className="sr-item hidden-title pb-3">
                 Skills
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="float-right pr-5">Skills</div>
+                    <div className="sr-item float-right pr-5">Skills</div>
                 </div>
-                <div className="col skills-content">
+                <div className="sr-item col skills-content">
                     <div className="row">
                         <div className="col-3">
                             <div className="skills-category">
@@ -106,4 +107,15 @@ const Skills = (props) => {
     );
 }
 
-export default Skills;
+export default withScrollReveal([
+    {
+      selector: '.sr-item',
+      options: {
+        reset: false,
+        delay: 200,
+        easing: 'cubic-bezier(.694, 0, .335,1)',
+        mobile: true,
+        viewFactor: 0.3,
+      },
+    },
+])(Skills);
