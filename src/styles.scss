@@ -5,3 +5,30 @@ body {
     background-color: #f7f8fa;
     font-family: 'Work Sans', sans-serif;
 }
+
+.spacer {
+    padding-top: 12rem;
+}
+
+.title {
+    font-weight: 500;
+    color: #25A18E;
+    font-size: 1.15rem;
+}
+
+.hidden-title {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .title {
+        display: none;
+    }
+
+    .hidden-title {
+        display: block;
+        font-weight: 500;
+        color: #25A18E;
+        font-size: 1.15rem;
+    }
+}

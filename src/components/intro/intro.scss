@@ -3,6 +3,10 @@
     height: 100vh; // Sets this div to automatically take up the full height of the viewport
 }
 
+.green {
+    color: #25A18E;
+}
+
 .intro-title {
     font-size: 2.5rem;
 }
@@ -11,4 +15,37 @@
     font-size: 1.5rem;
     width: 50%;
     overflow-wrap: normal;
+}
+
+.intro-contact {
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .intro-title {
+        font-size: 2rem;
+    }
+
+    .intro-body {
+        font-size: 1.25rem;
+    }
+
+    .intro-contact {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .intro-title {
+        font-size: 1.5rem;
+    }
+
+    .intro-body {
+        width: 75%; /* The width is 100%, when the viewport is 800px or smaller */
+        font-size: 1rem;
+    }
+
+    .intro-contact {
+        font-size: .85rem;
+    }
 }
