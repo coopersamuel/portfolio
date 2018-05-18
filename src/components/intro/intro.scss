@@ -1,5 +1,6 @@
 .intro {
     height: 100vh; // Sets this div to automatically take up the full height of the viewport
+    position: relative;
 }
 
 .green {
@@ -47,4 +48,21 @@
     .intro-contact {
         font-size: .85rem;
     }
+}
+
+a {
+    color: inherit !important;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    opacity: .15;
+    transition: 600ms;
+}
+
+.hide {
+    opacity: 0;
+    transition: 600ms;
 }
