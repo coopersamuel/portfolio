@@ -35,15 +35,18 @@ class App extends React.Component {
         const windowHeight = window.innerHeight;
 
         _.forEach(elements, element => {
-            let posFromTop = element.getBoundingClientRect().top;
-            if (posFromTop - windowHeight <= -150) {
-                element.className = element.className.replace('hidden', 'fade-in-element');
+            if (element) {
+                let posFromTop = element.getBoundingClientRect().top;
+                if (posFromTop - windowHeight <= -150) {
+                    element.className = element.className.replace('hidden', 'fade-in-element');
+                }
             }
         })
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        this.checkPosition();   // Run this once just to make sure the element is already in view when the component is mounted
     }
 
     render() {
