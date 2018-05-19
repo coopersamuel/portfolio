@@ -3,7 +3,7 @@ import './about.scss';
 
 const About = (props) => {
     return (
-        <div className="hidden">
+        <div className="hidden element" id="element_2">
             <div className="hidden-title pb-3">
                 About Me
             </div>

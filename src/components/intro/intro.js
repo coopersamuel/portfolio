@@ -10,7 +10,10 @@ const Intro = (props) => {
 
     return (
         <div>
-            <div className="intro row align-items-center">
+            <div className="intro row align-items-center element" id="element_1">
+                <div className="col-6 left-spacer">
+                    &nbsp;
+                </div>
                 <div className="col mb-5">
                     <div className="intro-title pb-5">
                         Hey! I'm <strong className="green">Sam</strong>,

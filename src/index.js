@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import _ from 'lodash';
+import scrollIntoView from 'scroll-into-view';
 
 import Intro from './components/intro/intro';
 import About from './components/about/about';
@@ -13,11 +14,14 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isScrolled: false
+            isScrolled: false,
+            location: "element_1"
         }
 
         this.handleScroll = this.handleScroll.bind(this);
         this.checkPosition = this.checkPosition.bind(this);
+        this.scrollToLocation = this.scrollToLocation.bind(this);
+        this.setLocationOnScroll = this.setLocationOnScroll.bind(this);
     }
 
     handleScroll() {
@@ -28,6 +32,7 @@ class App extends React.Component {
         }
 
         this.checkPosition();
+        this.setLocationOnScroll();
     }
 
     checkPosition() {
@@ -44,6 +49,35 @@ class App extends React.Component {
         })
     }
 
+    scrollToLocation(location) {
+        const element = document.getElementById(location);
+
+        scrollIntoView(element, {
+            time: 400,
+            ease: function(value){
+                return 1 - Math.pow(1 - value, value / 5);
+            }
+        });
+    }
+
+    setLocationOnScroll() {
+        const elements = document.getElementsByClassName('element');
+        const windowHeight = window.innerHeight;
+
+        _.forEach(elements, element => {
+            if (element) {
+                let posFromTop = element.getBoundingClientRect().top;
+                if (posFromTop - windowHeight <= -250) {
+                    // Set the location in the state
+                    if (this.state.location !== element.id) {
+                        console.log(element.id);
+                        this.setState({ location: element.id });
+                    }
+                }
+            }
+        })
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         this.checkPosition();   // Run this once just to make sure the element is already in view when the component is mounted
@@ -51,16 +85,35 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid">
-                <div className="row justify-content-center">
-                    <div className="col-9">
-                        <Intro isScrolled={this.state.isScrolled} />
-                        <About />
-                        <div className="spacer">&nbsp;</div>
-                        <Skills />
-                        <div className="spacer">&nbsp;</div>
-                        <Experience />
-                        <div className="spacer">&nbsp;</div>
+            <div>
+                <div className="green-block">
+                    &nbsp;
+                </div>
+                <div className="container-fluid">
+                    <div className="row justify-content-center">
+                        <div className="col-9">
+                            <Intro isScrolled={this.state.isScrolled} />
+                            <About />
+                            <div className="spacer">&nbsp;</div>
+                            <Skills />
+                            <div className="spacer">&nbsp;</div>
+                            <Experience />
+                            <div className="spacer">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="nav-container">
+                    <div className="navigation">
+                        <div className="dots-container">
+                            <div    className={`dot ${this.state.location === 'element_1' ? 'filled-in' : ''}`}                                     
+                                    onClick={() => this.scrollToLocation(`element_${1}`)}></div>
+                            <div    className={`dot ${this.state.location === 'element_2' ? 'filled-in' : ''}`}
+                                    onClick={() => this.scrollToLocation(`element_${2}`)}></div>
+                            <div    className={`dot ${this.state.location === 'element_3' ? 'filled-in' : ''}`}
+                                    onClick={() => this.scrollToLocation(`element_${3}`)}></div>
+                            <div    className={`dot ${this.state.location === 'element_4' ? 'filled-in' : ''}`}
+                                    onClick={() => this.scrollToLocation(`element_${4}`)}></div>
+                        </div>
                     </div>
                 </div>
             </div>
