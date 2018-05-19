@@ -7,6 +7,10 @@ body {
     color: #444451;
 }
 
+::selection {
+    background: #9BD4CB; /* WebKit/Blink Browsers */
+  }
+
 .green-block {
     height: 100vh;
     width: 36vw;
