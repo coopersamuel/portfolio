@@ -13,7 +13,7 @@
 
 .intro-body {
     font-size: 1.5rem;
-    width: 50%;
+    //width: 50%;
     overflow-wrap: normal;
 }
 
@@ -47,6 +47,10 @@
 
     .intro-contact {
         font-size: .85rem;
+    }
+
+    .left-spacer {
+        display: none;
     }
 }
 

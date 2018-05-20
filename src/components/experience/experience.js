@@ -3,7 +3,7 @@ import './experience.scss';
 
 const Experience = (props) => {
     return (
-        <div className="hidden">
+        <div className="hidden element" id="element_4">
             <div className="hidden-title pb-3">
                 Experience
             </div>

@@ -7,6 +7,18 @@ body {
     color: #444451;
 }
 
+::selection {
+    background: #9BD4CB; /* WebKit/Blink Browsers */
+  }
+
+.green-block {
+    height: 100vh;
+    width: 36vw;
+    position: fixed;
+    top: 0;
+    background-color: #9BD4CB;
+}
+
 .spacer {
     padding-top: 12rem;
 }
@@ -32,6 +44,14 @@ body {
         color: #25A18E;
         font-size: 1.15rem;
     }
+
+    .green-block {
+        display: none;
+    }
+
+    .nav-container {
+        display: none;
+    }
 }
 
 .hidden {
@@ -50,5 +70,32 @@ body {
 }
 .fade-in-element {
     animation: fade-in 2.4s;
+}
 
+.nav-container {
+    left: 5%;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border: 2px solid #25A18E;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &.filled-in {
+        background-color: #25A18E;
+    }
 }
