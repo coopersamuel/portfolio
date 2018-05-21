@@ -1,0 +1,25 @@
+.project-content {
+    font-size: 1.05rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .project-content {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .project-content {
+        font-size: .85rem;
+    }
+}
+
+.project-name {
+    font-weight: 500;
+    padding-bottom: .25rem;
+    letter-spacing: 1px;
+}
+
+.link {
+    color: #25A18E !important;
+}

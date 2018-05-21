@@ -7,6 +7,7 @@ import Intro from './components/intro/intro';
 import About from './components/about/about';
 import Skills from './components/skills/skills';
 import Experience from './components/experience/experience';
+import Projects from './components/projects/projects';
 import './styles.scss';
 
 class App extends React.Component {
@@ -70,7 +71,6 @@ class App extends React.Component {
                 if (posFromTop - windowHeight <= -250) {
                     // Set the location in the state
                     if (this.state.location !== element.id) {
-                        console.log(element.id);
                         this.setState({ location: element.id });
                     }
                 }
@@ -99,6 +99,8 @@ class App extends React.Component {
                             <div className="spacer">&nbsp;</div>
                             <Experience />
                             <div className="spacer">&nbsp;</div>
+                            <Projects />
+                            <div className="spacer">&nbsp;</div>
                         </div>
                     </div>
                 </div>
@@ -113,6 +115,8 @@ class App extends React.Component {
                                     onClick={() => this.scrollToLocation(`element_${3}`)}></div>
                             <div    className={`dot ${this.state.location === 'element_4' ? 'filled-in' : ''}`}
                                     onClick={() => this.scrollToLocation(`element_${4}`)}></div>
+                            <div    className={`dot ${this.state.location === 'element_5' ? 'filled-in' : ''}`}
+                                    onClick={() => this.scrollToLocation(`element_${5}`)}></div>
                         </div>
                     </div>
                 </div>
