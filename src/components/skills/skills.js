@@ -9,7 +9,7 @@ const Skills = (props) => {
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="float-right pr-5">Skills</div>
+                    <div className="float-right pr-5"><span className="title-top-border">Skills</span></div>
                 </div>
                 <div className="col skills-content">
                     <div className="row">
@@ -47,6 +47,9 @@ const Skills = (props) => {
                                 Redux
                             </div>
                             <div className="skill">
+                                React Router
+                            </div>
+                            <div className="skill">
                                 React Native
                             </div>
                             <div className="skill">
@@ -77,6 +80,9 @@ const Skills = (props) => {
                             </div>
                             <div className="skill">
                                 REST APIs
+                            </div>
+                            <div className="skill">
+                                Axios
                             </div>
                         </div>
                         <div className="col-3">

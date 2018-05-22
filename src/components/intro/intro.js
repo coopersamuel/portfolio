@@ -22,7 +22,7 @@ const Intro = (props) => {
                         I'm a <strong className="green">Fullstack Developer</strong>. I write software to do all sorts of things, everything from intuitive user experiences to complex algorithms.
                     </div>
                     <div className="intro-contact pt-5">
-                        <a target="_blank" href="mailto:cooper.samuel22@gmail.com"><MdMailOutline className="mr-3" size={30} /></a>
+                        <a href="mailto:cooper.samuel22@gmail.com"><MdMailOutline className="mr-3" size={30} /></a>
                         <a target="_blank" href="https://github.com/coopersamuel"><GoMarkGithub className="mr-3" size={27} /></a>
                         <a target="_blank" href="https://www.linkedin.com/in/samuel-cooper-b81945a5/"><FaLinkedinSquare className="mr-3" size={28} /></a>
                     </div>

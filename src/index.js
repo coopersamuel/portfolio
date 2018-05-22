@@ -8,6 +8,7 @@ import About from './components/about/about';
 import Skills from './components/skills/skills';
 import Experience from './components/experience/experience';
 import Projects from './components/projects/projects';
+import Contact from './components/contact/contact';
 import './styles.scss';
 
 class App extends React.Component {
@@ -68,7 +69,7 @@ class App extends React.Component {
         _.forEach(elements, element => {
             if (element) {
                 let posFromTop = element.getBoundingClientRect().top;
-                if (posFromTop - windowHeight <= -250) {
+                if (posFromTop - windowHeight <= -200) {
                     // Set the location in the state
                     if (this.state.location !== element.id) {
                         this.setState({ location: element.id });
@@ -100,7 +101,19 @@ class App extends React.Component {
                             <Experience />
                             <div className="spacer">&nbsp;</div>
                             <Projects />
-                            <div className="spacer">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col hidden-contact-info">
+                            <Contact scrollable={false} />
+                        </div>
+                    </div>
+                    <div className="row justify-content-left">
+                        <div className="col contact-info">
+                            <Contact scrollable={true} />
+                        </div>
+                        <div className="col m-0 p-0">
+                            <img className="sam-photo" src="../assets/sam.jpg"></img>
                         </div>
                     </div>
                 </div>
@@ -117,6 +130,8 @@ class App extends React.Component {
                                     onClick={() => this.scrollToLocation(`element_${4}`)}></div>
                             <div    className={`dot ${this.state.location === 'element_5' ? 'filled-in' : ''}`}
                                     onClick={() => this.scrollToLocation(`element_${5}`)}></div>
+                            <div    className={`dot ${this.state.location === 'element_6' ? 'filled-in' : ''}`}
+                                    onClick={() => this.scrollToLocation(`element_${6}`)}></div>
                         </div>
                     </div>
                 </div>

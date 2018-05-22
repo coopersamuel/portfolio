@@ -2,6 +2,10 @@
     font-size: 1.05rem;
 }
 
+.small-text {
+    font-size: .75rem;
+}
+
 @media screen and (max-width: 1200px) {
     .project-content {
         font-size: .95rem;
@@ -11,6 +15,10 @@
 @media screen and (max-width: 800px) {
     .project-content {
         font-size: .85rem;
+    }
+
+    .small-text {
+        display: none;
     }
 }
 

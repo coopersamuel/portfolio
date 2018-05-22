@@ -1,0 +1,33 @@
+.contact-block {
+    height: 100%;
+}
+
+.contact-link {
+    color: #BEDBD5 !important;
+    font-size: .90rem;
+    letter-spacing: 1.65px;
+    font-weight: 500;
+}
+
+.credits {
+    color: #BEDBD5;
+    font-size: .65rem;
+    letter-spacing: 1.65px;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-link {
+        font-size: .65rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-link {
+        font-size: .80rem;
+        color: #25A18E !important;
+    }
+    
+    .credits {
+        color: #25A18E;
+    }
+}

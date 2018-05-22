@@ -8,7 +8,8 @@ body {
 }
 
 ::selection {
-    background: #9BD4CB; /* WebKit/Blink Browsers */
+    background: #9BD4CB; 
+    color: #ffffff;
   }
 
 .green-block {
@@ -16,7 +17,13 @@ body {
     width: 36vw;
     position: fixed;
     top: 0;
-    background-color: #9BD4CB;
+    background-color: #5DA698;
+}
+
+.sam-photo {
+    float: right;
+    width: 64vw;
+    height: auto;
 }
 
 .spacer {
@@ -25,11 +32,20 @@ body {
 
 .title {
     font-weight: 500;
-    color: #25A18E;
-    font-size: 1.15rem;
+    color: #BEDBD5;
+    font-size: 1.05rem;
+}
+
+.title-top-border {
+    border-top: 3px solid #BEDBD5;
+    padding-top: 2px;
 }
 
 .hidden-title {
+    display: none;
+}
+
+.hidden-contact-info {
     display: none;
 }
 
@@ -51,6 +67,20 @@ body {
 
     .nav-container {
         display: none;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .hidden-contact-info {
+        display: block;
+    }
+
+    .sam-photo {
+        float: right;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -89,13 +119,13 @@ body {
 .dot {
     height: 10px;
     width: 10px;
-    border: 2px solid #25A18E;
+    border: 2px solid #BEDBD5;
     border-radius: 50%;
     display: block;
     margin-bottom: 20px;
     cursor: pointer;
 
     &.filled-in {
-        background-color: #25A18E;
+        background-color: #BEDBD5;
     }
 }
