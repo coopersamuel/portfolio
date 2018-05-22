@@ -24,6 +24,7 @@ const Projects = (props) => {
                                 This application uses <strong>Redux</strong> for application state management. 
                                 Try tracking some todos with <a className="link" target="_blank" href="https://coopersamuel.github.io/frello/">Frello</a>
                             </p>
+                            <img className="project-mockup" src="../../../assets/frello.png" />
                         </div>
                     </div>
                     <div className="row pb-5">
@@ -37,6 +38,7 @@ const Projects = (props) => {
                                 Go ahead and give <a className="link" target="_blank" href="https://coopersamuel.github.io/minesweeperJS/">MinesweeperJS</a> a go, 
                                 be careful not to step on any mines!
                             </p>
+                            <img className="project-mockup" src="../../../assets/minesweeper.png" />
                         </div>
                     </div>
                     <div className="row pb-5">
