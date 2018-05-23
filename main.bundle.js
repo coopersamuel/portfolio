@@ -142,6 +142,28 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/frello.png":
+/*!***************************!*\
+  !*** ./assets/frello.png ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "7fae688048f5157e3ea34535e40f5259.png";
+
+/***/ }),
+
+/***/ "./assets/minesweeper.png":
+/*!********************************!*\
+  !*** ./assets/minesweeper.png ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9aaf7032a5cfa72171df4328daf0f6a3.png";
+
+/***/ }),
+
 /***/ "./src/components/about/about.js":
 /*!***************************************!*\
   !*** ./src/components/about/about.js ***!
@@ -630,17 +652,17 @@ var Intro = function Intro(props) {
                     { className: 'intro-contact pt-5' },
                     _react2.default.createElement(
                         'a',
-                        { href: 'mailto:cooper.samuel22@gmail.com' },
+                        { className: 'icon-link', href: 'mailto:cooper.samuel22@gmail.com' },
                         _react2.default.createElement(_md.MdMailOutline, { className: 'mr-3', size: 30 })
                     ),
                     _react2.default.createElement(
                         'a',
-                        { target: '_blank', href: 'https://github.com/coopersamuel' },
+                        { className: 'icon-link', target: '_blank', href: 'https://github.com/coopersamuel' },
                         _react2.default.createElement(_go.GoMarkGithub, { className: 'mr-3', size: 27 })
                     ),
                     _react2.default.createElement(
                         'a',
-                        { target: '_blank', href: 'https://www.linkedin.com/in/samuel-cooper-b81945a5/' },
+                        { className: 'icon-link', target: '_blank', href: 'https://www.linkedin.com/in/samuel-cooper-b81945a5/' },
                         _react2.default.createElement(_fa.FaLinkedinSquare, { className: 'mr-3', size: 28 })
                     )
                 )
@@ -690,6 +712,14 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(/*! ./projects.scss */ "./src/components/projects/projects.scss");
+
+var _frello = __webpack_require__(/*! ../../../assets/frello.png */ "./assets/frello.png");
+
+var _frello2 = _interopRequireDefault(_frello);
+
+var _minesweeper = __webpack_require__(/*! ../../../assets/minesweeper.png */ "./assets/minesweeper.png");
+
+var _minesweeper2 = _interopRequireDefault(_minesweeper);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -783,7 +813,7 @@ var Projects = function Projects(props) {
                             { className: 'tech-item' },
                             'Bootstrap'
                         ),
-                        _react2.default.createElement('img', { className: 'project-mockup mt-3', src: '../../../assets/frello.png' })
+                        _react2.default.createElement('img', { className: 'project-mockup mt-3', src: _frello2.default })
                     )
                 ),
                 _react2.default.createElement(
@@ -838,7 +868,7 @@ var Projects = function Projects(props) {
                             { className: 'tech-item' },
                             'Material'
                         ),
-                        _react2.default.createElement('img', { className: 'project-mockup mt-3', src: '../../../assets/minesweeper.png' })
+                        _react2.default.createElement('img', { className: 'project-mockup mt-3', src: _minesweeper2.default })
                     )
                 ),
                 _react2.default.createElement(
