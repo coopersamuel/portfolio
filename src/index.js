@@ -10,6 +10,7 @@ import Experience from './components/experience/experience';
 import Projects from './components/projects/projects';
 import Contact from './components/contact/contact';
 import './styles.scss';
+import samPhoto from '../assets/sam.jpg';
 
 class App extends React.Component {
     constructor(props) {
@@ -113,7 +114,7 @@ class App extends React.Component {
                             <Contact scrollable={true} />
                         </div>
                         <div className="col m-0 p-0">
-                            <img className="sam-photo" src="../assets/sam.jpg"></img>
+                            <img className="sam-photo" src={samPhoto}></img>
                         </div>
                     </div>
                 </div>
