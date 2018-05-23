@@ -9,7 +9,7 @@ const Experience = (props) => {
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="float-right pr-5">Experience</div>
+                    <div className="float-right pr-5"><span className="title-top-border">Experience</span></div>
                 </div>
                 <div className="col experience-content">
                     <div className="row pb-5">

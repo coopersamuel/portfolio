@@ -1,0 +1,54 @@
+.project-content {
+    font-size: 1.05rem;
+}
+
+.small-text {
+    font-size: .75rem;
+}
+
+.project-mockup {
+    width: 75%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-item {
+    display: inline-block;
+    margin: 3px 6px 3px 0;
+    font-family: 'Roboto Mono';
+    font-size: .75rem;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: #25A18E;
+    border: 1px solid #25A18E;
+    background: 0 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .project-content {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .project-content {
+        font-size: .85rem;
+    }
+
+    .small-text {
+        display: none;
+    }
+}
+
+.project-name {
+    font-weight: 500;
+    padding-bottom: .25rem;
+    letter-spacing: 1px;
+}
+
+.link {
+    color: #25A18E !important;
+}

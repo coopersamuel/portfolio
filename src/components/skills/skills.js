@@ -9,11 +9,11 @@ const Skills = (props) => {
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="float-right pr-5">Skills</div>
+                    <div className="float-right pr-5"><span className="title-top-border">Skills</span></div>
                 </div>
                 <div className="col skills-content">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6 pb-4">
                             <div className="skills-category">
                                 Languages
                             </div>
@@ -36,7 +36,7 @@ const Skills = (props) => {
                                 C/C++
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6 pb-4">
                             <div className="skills-category">
                                 Libraries
                             </div>
@@ -45,6 +45,9 @@ const Skills = (props) => {
                             </div>
                             <div className="skill">
                                 Redux
+                            </div>
+                            <div className="skill">
+                                React Router
                             </div>
                             <div className="skill">
                                 React Native
@@ -62,7 +65,7 @@ const Skills = (props) => {
                                 Angular
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6">
                             <div className="skills-category">
                                 Backend
                             </div>
@@ -78,8 +81,11 @@ const Skills = (props) => {
                             <div className="skill">
                                 REST APIs
                             </div>
+                            <div className="skill">
+                                Axios
+                            </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6">
                             <div className="skills-category">
                                 Tools
                             </div>
