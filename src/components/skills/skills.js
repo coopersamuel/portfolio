@@ -13,7 +13,7 @@ const Skills = (props) => {
                 </div>
                 <div className="col skills-content">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6 pb-4">
                             <div className="skills-category">
                                 Languages
                             </div>
@@ -36,7 +36,7 @@ const Skills = (props) => {
                                 C/C++
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6 pb-4">
                             <div className="skills-category">
                                 Libraries
                             </div>
@@ -65,7 +65,7 @@ const Skills = (props) => {
                                 Angular
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6">
                             <div className="skills-category">
                                 Backend
                             </div>
@@ -85,7 +85,7 @@ const Skills = (props) => {
                                 Axios
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-sm-3 col-6">
                             <div className="skills-category">
                                 Tools
                             </div>
