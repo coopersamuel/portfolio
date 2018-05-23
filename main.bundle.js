@@ -164,6 +164,17 @@ module.exports = __webpack_require__.p + "9aaf7032a5cfa72171df4328daf0f6a3.png";
 
 /***/ }),
 
+/***/ "./assets/sam.jpg":
+/*!************************!*\
+  !*** ./assets/sam.jpg ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "35f01e939910ecab7feb608b3f9064de.jpg";
+
+/***/ }),
+
 /***/ "./src/components/about/about.js":
 /*!***************************************!*\
   !*** ./src/components/about/about.js ***!
@@ -1479,6 +1490,10 @@ var _contact2 = _interopRequireDefault(_contact);
 
 __webpack_require__(/*! ./styles.scss */ "./src/styles.scss");
 
+var _sam = __webpack_require__(/*! ../assets/sam.jpg */ "./assets/sam.jpg");
+
+var _sam2 = _interopRequireDefault(_sam);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1636,7 +1651,7 @@ var App = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'col m-0 p-0' },
-                            _react2.default.createElement('img', { className: 'sam-photo', src: '../assets/sam.jpg' })
+                            _react2.default.createElement('img', { className: 'sam-photo', src: _sam2.default })
                         )
                     )
                 ),
