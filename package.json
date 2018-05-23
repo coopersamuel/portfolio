@@ -1,7 +1,7 @@
 {
-  "name": "Frello",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "trello clone",
+  "description": "personal website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coopersamuel/frello.git"
+    "url": "git+https://github.com/coopersamuel/portfolio.git"
   },
   "author": "Samuel Cooper",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coopersamuel/frello/issues"
+    "url": "https://github.com/coopersamuel/portfolio/issues"
   },
-  "homepage": "https://coopersamuel.github.io/frello/",
+  "homepage": "https://coopersamuel.github.io/portfolio/",
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.46",
     "autoprefixer": "^8.3.0",
