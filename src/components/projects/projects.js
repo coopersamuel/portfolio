@@ -1,5 +1,7 @@
 import React from 'react';
 import './projects.scss';
+import frelloMock from '../../../assets/frello.png';
+import minesweeperMock from '../../../assets/minesweeper.png';
 
 const Projects = (props) => {
     return (
@@ -29,7 +31,7 @@ const Projects = (props) => {
                             <span className="tech-item">ReactDnD</span>
                             <span className="tech-item">Webpack</span>
                             <span className="tech-item">Bootstrap</span>
-                            <img className="project-mockup mt-3" src="../../../assets/frello.png" />
+                            <img className="project-mockup mt-3" src={frelloMock} />
                         </div>
                     </div>
                     <div className="row pb-5">
@@ -47,7 +49,7 @@ const Projects = (props) => {
                             <span className="tech-item">Redux</span>
                             <span className="tech-item">Webpack</span>
                             <span className="tech-item">Material</span>
-                            <img className="project-mockup mt-3" src="../../../assets/minesweeper.png" />
+                            <img className="project-mockup mt-3" src={minesweeperMock} />
                         </div>
                     </div>
                     <div className="row pb-5">
