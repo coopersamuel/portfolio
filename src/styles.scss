@@ -1,11 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://use.typekit.net/pro4brl.css");
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500');
 
 body {
     background-color: #ffffff;
-    font-family: 'Work Sans', sans-serif;
-    color: #444451;
+    font-family: "europa", "Work Sans", sans-serif; 
+    color: #293855;
 }
 
 ::selection {
@@ -19,6 +20,7 @@ body {
     position: fixed;
     top: 0;
     background-color: #1c48a0;
+    box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .sam-photo {
@@ -32,7 +34,7 @@ body {
 }
 
 .title {
-    color: #69e9aa;
+    color:#fbe38e;
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 10px;
@@ -64,7 +66,7 @@ body {
     .hidden-title {
         display: block;
         font-weight: 500;
-        color: #69e9aa;
+        color: #fbe38e;
         font-size: 1.75rem;
     }
 

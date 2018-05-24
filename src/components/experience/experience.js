@@ -14,8 +14,11 @@ const Experience = (props) => {
                 <div className="col experience-content">
                     <div className="row pb-5">
                         <div className="col">
-                            <div className="experience-name">
+                            <div className="experience-title">
                                 <strong>Fullstack Software Engineer</strong>
+                            </div>
+                            <div className="experience-name">
+                                <strong>General Dynamics</strong>
                             </div>
                             <p>
                                 In my current role with <strong>General Dynamics</strong>, I build high performance, 
@@ -29,8 +32,11 @@ const Experience = (props) => {
                     </div>
                     <div className="row pb-5">
                         <div className="col">
-                            <div className="experience-name">
+                            <div className="experience-title">
                                 <strong>Software Engineer</strong>
+                            </div>
+                            <div className="experience-name">
+                                <strong>Eaton</strong>
                             </div>
                             <p>
                                 Throughout my time with <strong>Eaton</strong>, I was involved in the design and implementation
@@ -43,6 +49,9 @@ const Experience = (props) => {
                     </div>
                     <div className="row pb-5">
                         <div className="col">
+                            <div className="experience-title">
+                                <strong>Computer Engineer</strong>
+                            </div>
                             <div className="experience-name">
                                 <strong>Computer Engineer</strong>
                             </div>
@@ -57,8 +66,11 @@ const Experience = (props) => {
                     </div>
                     <div className="row pb-5">
                         <div className="col">
-                            <div className="experience-name">
+                            <div className="experience-title">
                                 <strong>Engineering Intern</strong>
+                            </div>
+                            <div className="experience-name">
+                                <strong>Fresenius Kabi</strong>
                             </div>
                             <p>
                                 In an internship with <strong>Fresenius Kabi</strong>, an international health technologies company, 
