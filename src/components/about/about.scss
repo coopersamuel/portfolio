@@ -1,5 +1,9 @@
-.about-content {
-    font-size: 1.05rem;
+.col {
+    &.about-content {
+        font-size: 1.05rem;
+        padding-top: 5px;
+        padding-right: 20%;
+    }
 }
 
 @media screen and (max-width: 1200px) {

@@ -11,7 +11,7 @@ const Projects = (props) => {
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="float-right pr-5"><span className="title-top-border">Personal Projects</span></div>
+                    <div className="title-align"><span className="title-rotate">projects</span></div>
                 </div>
                 <div className="col project-content">
                     <div className="row pb-5">

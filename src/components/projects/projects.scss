@@ -1,5 +1,9 @@
-.project-content {
-    font-size: 1.05rem;
+.col {
+    &.project-content {
+        font-size: 1.05rem;
+        padding-top: 5px;
+        padding-right: 20%;
+    }
 }
 
 .small-text {
@@ -22,8 +26,8 @@
     font-weight: 500;
     padding: 2px 7px;
     border-radius: 3px;
-    color: #225ee3;
-    border: 1px solid #225ee3;
+    color: #1c48a0;
+    border: 1px solid #1c48a0;
     background: 0 0;
 }
 
@@ -50,5 +54,5 @@
 }
 
 .link {
-    color: #25A18E !important;
+    color: #69e9aa !important;
 }
