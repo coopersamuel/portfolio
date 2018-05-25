@@ -9,7 +9,7 @@ const Skills = (props) => {
             </div>
             <div className="row align-items-top">
                 <div className="col-4 title">
-                    <div className="title-align"><span className="title-rotate">SKILLS</span></div>
+                    <div className="title-align"><span className="title-rotate">skills</span></div>
                 </div>
                 <div className="col skills-content">
                     <div className="row">

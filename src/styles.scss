@@ -23,6 +23,31 @@ body {
     //box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.15);
 }
 
+.logo {
+    opacity: 0;
+    transition: 800ms;
+
+    position: relative;
+    text-align: center;
+    letter-spacing: 2.5px;
+    top: 4%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #69e9aa;
+    cursor: pointer;
+}
+
+.show {
+    opacity: 1;
+    transition: 800ms;
+}
+
+.blinking-underscore {
+    color: #fbe38e;
+    animation: 
+      blink-caret .75s step-end infinite;
+}
+
 .sam-photo {
     float: right;
     width: 64vw;

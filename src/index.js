@@ -88,9 +88,6 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <div className="green-block">
-                    &nbsp;
-                </div>
                 <div className="container-fluid">
                     <div className="row justify-content-center">
                         <div className="col-9">
@@ -118,23 +115,26 @@ class App extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="nav-container">
-                    <div className="navigation">
-                        <div className="dots-container">
-                            <div    className={`dot ${this.state.location === 'element_1' ? 'filled-in' : ''}`}                                     
-                                    onClick={() => this.scrollToLocation(`element_${1}`)}></div>
-                            <div    className={`dot ${this.state.location === 'element_2' ? 'filled-in' : ''}`}
-                                    onClick={() => this.scrollToLocation(`element_${2}`)}></div>
-                            <div    className={`dot ${this.state.location === 'element_3' ? 'filled-in' : ''}`}
-                                    onClick={() => this.scrollToLocation(`element_${3}`)}></div>
-                            <div    className={`dot ${this.state.location === 'element_4' ? 'filled-in' : ''}`}
-                                    onClick={() => this.scrollToLocation(`element_${4}`)}></div>
-                            <div    className={`dot ${this.state.location === 'element_5' ? 'filled-in' : ''}`}
-                                    onClick={() => this.scrollToLocation(`element_${5}`)}></div>
-                            <div    className={`dot ${this.state.location === 'element_6' ? 'filled-in' : ''}`}
-                                    onClick={() => this.scrollToLocation(`element_${6}`)}></div>
+                <div className="green-block">
+                    <div className="nav-container">
+                        <div className="navigation">
+                            <div className="dots-container">
+                                <div    className={`dot ${this.state.location === 'element_1' ? 'filled-in' : ''}`}                                     
+                                        onClick={() => this.scrollToLocation(`element_${1}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_2' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${2}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_3' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${3}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_4' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${4}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_5' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${5}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_6' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${6}`)}></div>
+                            </div>
                         </div>
                     </div>
+                    <div className={`logo ${this.state.isScrolled ? 'show' : ''}`} onClick={() => this.scrollToLocation(`element_${1}`)}>sjc<span className="blinking-underscore">_</span></div>    
                 </div>
             </div>
         );
