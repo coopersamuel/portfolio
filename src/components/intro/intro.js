@@ -49,7 +49,6 @@ class Intro extends React.Component {
 
         let character = string[index];
         let displayString = this.state.currentString += character;
-
         this.setState({ currentString: displayString });
 
         // Wait a bit in between characters
@@ -70,7 +69,7 @@ class Intro extends React.Component {
                             Hey! I'm <strong className="green">Sam</strong>,
                         </div>
                         <div className="intro-body">
-                            I'm a <strong className="green"><span className="typeout">{this.state.currentString}</span></strong> 
+                            I'm a <strong className="green"><span className="typeout">{this.state.currentString}</span><span className="cursor">_</span></strong>
                         </div>
                         <div className="intro-body">
                             I write software to do all sorts of things, everything from intuitive user experiences to complex algorithms.
