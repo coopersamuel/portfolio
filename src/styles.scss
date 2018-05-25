@@ -1,24 +1,26 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://use.typekit.net/pro4brl.css");
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500');
 
 body {
-    background-color: #f7f8fa;
-    font-family: 'Work Sans', sans-serif;
-    color: #444451;
+    background-color: #ffffff;
+    font-family: "europa", "Work Sans", sans-serif; 
+    color: #293855;
 }
 
 ::selection {
-    background: #9BD4CB; 
+    background: #69e9aa; 
     color: #ffffff;
   }
 
 .green-block {
     height: 100vh;
-    width: 36vw;
+    width: 11vw;
     position: fixed;
     top: 0;
-    background-color: #5DA698;
+    background-color: #3262CA;
+    //box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .sam-photo {
@@ -32,14 +34,20 @@ body {
 }
 
 .title {
-    font-weight: 500;
-    color: #BEDBD5;
-    font-size: 1.05rem;
+    color:#fbe38e;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 10px;
 }
 
-.title-top-border {
-    border-top: 3px solid #BEDBD5;
-    padding-top: 2px;
+.title-align {
+    float: right;
+    margin-right: 20%;
+}
+
+.title-rotate {
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
 }
 
 .hidden-title {
@@ -58,8 +66,8 @@ body {
     .hidden-title {
         display: block;
         font-weight: 500;
-        color: #25A18E;
-        font-size: 1.15rem;
+        color: #fbe38e;
+        font-size: 1.75rem;
     }
 
     .green-block {
@@ -120,13 +128,13 @@ body {
 .dot {
     height: 10px;
     width: 10px;
-    border: 2px solid #BEDBD5;
+    border: 2px solid #69e9aa;
     border-radius: 50%;
     display: block;
     margin-bottom: 20px;
     cursor: pointer;
 
     &.filled-in {
-        background-color: #BEDBD5;
+        background-color: #69e9aa;
     }
 }

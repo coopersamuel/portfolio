@@ -4,15 +4,16 @@
 }
 
 .green {
-    color: #25A18E;
+    color: #69e9aa;
 }
 
 .icon-link:hover {
-    color: #25A18E !important;
+    color: #69e9aa !important;
 }
 
 .intro-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 .intro-body {
@@ -26,7 +27,7 @@
 
 @media screen and (max-width: 1200px) {
     .intro-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .intro-body {
@@ -40,7 +41,7 @@
 
 @media screen and (max-width: 800px) {
     .intro-title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .intro-body {
@@ -72,4 +73,26 @@ a {
 .hide {
     opacity: 0;
     transition: 600ms;
+}
+
+.typeout {
+    //border-right: .15em solid #fbe38e; /* The typwriter cursor - using underscore cursor instead */
+    padding-right: 3px;
+    padding-left: 2px;
+    letter-spacing: .05em; /* Adjust as needed */
+}
+
+.cursor {
+    color: #fbe38e;
+    font-size: 1.7rem;
+    line-height: 80%;
+    font-weight: 900;
+    animation: 
+      blink-caret .75s step-end infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { color: transparent }
+    50% { color: #fbe38e; }
 }
