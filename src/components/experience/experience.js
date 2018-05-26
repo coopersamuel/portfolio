@@ -87,13 +87,13 @@ class Experience extends React.Component {
                                         <span className={`${this.state.collapseBike ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
                                     <strong className="experience-underline-container">
-                                        Computer Engineer
+                                        Computer Engineer + Team Lead
                                         <div className="experience-underline"></div>
                                     </strong>
                                 </div>
                                 <div className="collapse collapse-content" id="experience_bike">
                                     <div className="experience-name">
-                                        <strong>Computer Engineer</strong>
+                                        <strong>Engineering Design Competition</strong>
                                     </div>
                                     <p>
                                         Several years back as a part of a design competition, I led a team of software and electrical engineers 
