@@ -43,7 +43,7 @@ class Projects extends React.Component {
                                         Frello
                                         <div className="project-underline"></div>
                                     </strong>
-                                    <a className="pl-3" target="_blank" href="https://coopersamuel.github.io/frello/"><TiLink size={25} /></a>
+                                    <a className="link pl-3" target="_blank" href="https://coopersamuel.github.io/frello/"><TiLink size={25} /></a>
                                 </div>
                                 <div className="collapse show collapse-content" id="project-trello">
                                     <p>
@@ -73,7 +73,7 @@ class Projects extends React.Component {
                                         MinesweeperJS
                                         <div className="project-underline"></div>
                                     </strong>
-                                    <a className="pl-3" target="_blank" href="https://coopersamuel.github.io/minesweeperJS/"><TiLink size={25} /></a>
+                                    <a className="link pl-3" target="_blank" href="https://coopersamuel.github.io/minesweeperJS/"><TiLink size={25} /></a>
                                 </div>
                                 <div className="collapse collapse-content" id="project-minesweeper">
                                     <p>

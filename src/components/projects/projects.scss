@@ -32,7 +32,7 @@
     transition: 300ms;
 }
 
-.project-name:hover {
+.project-underline-container:hover {
     .project-underline {
         top: 45%;
         left: 3%;
@@ -75,4 +75,8 @@
     .small-text {
         display: none;
     }
+}
+
+.link:hover {
+    color: #fbe38e !important;
 }
