@@ -11,7 +11,7 @@ class Intro extends React.Component {
         super(props);
 
         this.state = {
-            typewriterStrings: ["Fullstack Developer.", "Idea Maker.", "Lifelong Learner."], // Array with strings to type in typewriter
+            typewriterStrings: ["Fullstack Developer.", "Idea Maker.", "UX Architect."], // Array with strings to type in typewriter
             currentString: '' // Current string being displayed
         };
 
@@ -81,7 +81,7 @@ class Intro extends React.Component {
                         </div>
                     </div>
                     <div className={`scroll-indicator ${isScrolled ? 'hide' : ''}`}>
-                        <MdKeyboardArrowDown size={50} onScroll={(event) => console.log('scroll')} />
+                        <MdKeyboardArrowDown size={50} />
                     </div>
                 </div>
             </div>
