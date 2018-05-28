@@ -1,0 +1,28 @@
+.col {
+    &.values-content {
+        font-size: 1.05rem;
+        padding-top: 5px;
+        padding-right: 20%;
+    }
+}
+
+.value-number {
+    font-family: 'inconsolata';
+    font-weight: 500;
+    padding-bottom: .25rem;
+    letter-spacing: 1px;
+    font-size: 1.15rem;
+    color: #3262CA;
+}
+
+@media screen and (max-width: 1200px) {
+    .values-content {
+        font-size: .95rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .values-content {
+        font-size: .85rem;
+    }
+}

@@ -8,6 +8,7 @@ import About from './components/about/about';
 import Skills from './components/skills/skills';
 import Experience from './components/experience/experience';
 import Projects from './components/projects/projects';
+import Values from './components/values/values';
 import Contact from './components/contact/contact';
 import './styles.scss';
 import waveBackground from '../assets/wave_background.svg';
@@ -99,6 +100,9 @@ class App extends React.Component {
                             <Experience />
                             <div className="spacer">&nbsp;</div>
                             <Projects />
+                            <div className="spacer">&nbsp;</div>
+                            <Values />
+                            <div className="spacer">&nbsp;</div>
                         </div>
                     </div>
                 </div>
@@ -132,6 +136,8 @@ class App extends React.Component {
                                         onClick={() => this.scrollToLocation(`element_${5}`)}></div>
                                 <div    className={`dot ${this.state.location === 'element_6' ? 'filled-in' : ''}`}
                                         onClick={() => this.scrollToLocation(`element_${6}`)}></div>
+                                <div    className={`dot ${this.state.location === 'element_7' ? 'filled-in' : ''}`}
+                                        onClick={() => this.scrollToLocation(`element_${7}`)}></div>
                             </div>
                         </div>
                     </div>
