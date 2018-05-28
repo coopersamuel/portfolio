@@ -14,7 +14,7 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div className="element row mb-5 contact-block" id='element_6'>
+            <div className="element row mb-5 contact-block" id='element_7'>
                 <div className="col-4 title">
                     &nbsp;        
                 </div>
