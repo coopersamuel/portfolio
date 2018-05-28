@@ -48,10 +48,19 @@ body {
       blink-caret .75s step-end infinite;
 }
 
-.sam-photo {
-    float: right;
-    width: 64vw;
-    height: auto;
+.wave {
+    background-position: center top;
+    //background-size: 100% 300px;
+    background-repeat: repeat-x;
+}
+
+.wave-padding {
+    padding-bottom: 50px;
+}
+
+.contact-container {
+    overflow: visible;
+    background-color: #fbe38e;
 }
 
 .spacer {
@@ -111,10 +120,8 @@ body {
         display: block;
     }
 
-    .sam-photo {
-        float: right;
-        width: 100%;
-        height: auto;
+    .wave-padding {
+        padding-bottom: 20px;
     }
 }
 

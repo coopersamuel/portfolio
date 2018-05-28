@@ -46,7 +46,7 @@ class Experience extends React.Component {
                                         In my current role with <strong>General Dynamics</strong>, I build high performance, 
                                         data heavy applications at the <strong>CDC</strong>, in Atlanta. These apps are geared 
                                         toward bioinformatics specific functions at CDC and are of great benefit to the public health.
-                                        Several of the apps that myself and my team work on have attention from 
+                                        Several of the apps that I'm working on have attention from 
                                         the <strong>World Health Organization</strong> for their potential to aid in the 
                                         eradication of high profile, worldwide diseases.
                                     </p>

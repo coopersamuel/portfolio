@@ -17,7 +17,7 @@ const About = (props) => {
                         Now, I build fullstack <strong>JavaScript</strong> applications using a host of modern technologies.
                         Currently, I work fulltime as a software engineer for <strong>General Dynamics</strong> where 
                         I build applications for the US Centers for Disease Control in <strong>Atlanta, GA</strong>.
-                        I have my Bachelor's in Electrical Engineering and am working on my Master's in Computer Science at Georgia Tech.
+                        I have my Bachelor's in Electrical Engineering and am pursuing a Master's in Computer Science at <strong>Georgia Tech</strong>.
                     </p>
                     <br />
                     <p>
@@ -26,7 +26,7 @@ const About = (props) => {
                     </p>
                     <br />
                     <p>
-                        When I'm off the clock, I enjoy catching waves in the big blue, time spent with my wife or a good book.
+                        When I'm off the clock, I enjoy catching waves in the big blue, time spent with my wife or a good adventure novel.
                     </p>
                 </div>
             </div>

@@ -34,12 +34,12 @@ class Projects extends React.Component {
                     <div className="col project-content">
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-trello" 
-                                    onClick={() => this.setState({ collapseTrello: !this.state.collapseTrello })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseTrello ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-trello" 
+                                            onClick={() => this.setState({ collapseTrello: !this.state.collapseTrello })}>
                                         Frello
                                         <div className="project-underline"></div>
                                     </strong>
@@ -64,12 +64,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-minesweeper" 
-                                    onClick={() => this.setState({ collapseMinesweeper: !this.state.collapseMinesweeper })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseMinesweeper ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-minesweeper" 
+                                            onClick={() => this.setState({ collapseMinesweeper: !this.state.collapseMinesweeper })}>
                                         MinesweeperJS
                                         <div className="project-underline"></div>
                                     </strong>
@@ -92,12 +92,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-auth-graphql" 
-                                    onClick={() => this.setState({ collapseAuth: !this.state.collapseAuth })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseAuth ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-auth-graphql" 
+                                            onClick={() => this.setState({ collapseAuth: !this.state.collapseAuth })}>
                                         Auth-GraphQL
                                         <div className="project-underline"></div>
                                     </strong>
@@ -120,12 +120,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-jamming" 
-                                    onClick={() => this.setState({ collapseJamming: !this.state.collapseJamming })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseJamming ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-jamming" 
+                                            onClick={() => this.setState({ collapseJamming: !this.state.collapseJamming })}>
                                         Jamming
                                         <div className="project-underline"></div>
                                     </strong>
@@ -144,12 +144,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-songwriter" 
-                                    onClick={() => this.setState({ collapseSongwriter: !this.state.collapseSongwriter })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseSongwriter ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-songwriter" 
+                                            onClick={() => this.setState({ collapseSongwriter: !this.state.collapseSongwriter })}>
                                         Songwriter
                                         <div className="project-underline"></div>
                                     </strong>
@@ -171,12 +171,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-weather" 
-                                    onClick={() => this.setState({ collapseWeather: !this.state.collapseWeather })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseWeather ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-weather" 
+                                            onClick={() => this.setState({ collapseWeather: !this.state.collapseWeather })}>
                                         Weather
                                         <div className="project-underline"></div>
                                     </strong>
@@ -195,12 +195,12 @@ class Projects extends React.Component {
                         </div>
                         <div className="row pb-5">
                             <div className="col">
-                                <div className="project-name" data-toggle="collapse" data-target="#project-ravenous" 
-                                    onClick={() => this.setState({ collapseRavenous: !this.state.collapseRavenous })}>
+                                <div className="project-name">
                                     <span className="triangle-container">
                                         <span className={`${this.state.collapseRavenous ? '' : 'rotate-triangle'}`}>&#9656;</span>
                                     </span>
-                                    <strong className="project-underline-container">
+                                    <strong className="project-underline-container" data-toggle="collapse" data-target="#project-ravenous" 
+                                            onClick={() => this.setState({ collapseRavenous: !this.state.collapseRavenous })}>
                                         Ravenous
                                         <div className="project-underline"></div>
                                     </strong>
