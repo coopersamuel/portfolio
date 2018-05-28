@@ -10,7 +10,7 @@ import Experience from './components/experience/experience';
 import Projects from './components/projects/projects';
 import Contact from './components/contact/contact';
 import './styles.scss';
-import samPhoto from '../assets/sam.jpg';
+import waveBackground from '../assets/wave_background.svg';
 
 class App extends React.Component {
     constructor(props) {
@@ -101,17 +101,18 @@ class App extends React.Component {
                             <Projects />
                         </div>
                     </div>
-                    <div className="row justify-content-center">
-                        <div className="col hidden-contact-info">
-                            <Contact scrollable={false} />
-                        </div>
+                </div>
+                <div className="wave" style={{backgroundImage: `url(${waveBackground})`}}>
+                    <div className="wave-padding">
+                        &nbsp;
                     </div>
-                    <div className="row justify-content-left">
-                        <div className="col contact-info">
-                            <Contact scrollable={true} />
-                        </div>
-                        <div className="col m-0 p-0">
-                            <img className="sam-photo" src={samPhoto}></img>
+                    <div className="contact-container">
+                        <div className="container-fluid">
+                            <div className="row justify-content-center">
+                                <div className="col-9">
+                                    <Contact />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
