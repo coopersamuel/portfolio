@@ -24,7 +24,7 @@ const Values = (props) => {
                             <div className="value-number text-right">02</div>
                             <div className="value-text text-right">
                                 <strong>Be fueled by purpose.</strong>
-                                <p>Those who prioritizes the common good will always go further.</p>
+                                <p>Those who prioritize the common good will always go further.</p>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ const Values = (props) => {
                             <div className="value-number text-right">04</div>
                             <div className="value-text text-right">
                                 <strong>Usability is key.</strong>
-                                <p>Great software is both intuitive and delightful to use, otherwise it won't be used at all.</p>
+                                <p>Great software is both intuitive and delightful to use, otherwise it wouldn't be used at all.</p>
                             </div>
                         </div>
                     </div>
