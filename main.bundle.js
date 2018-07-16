@@ -1990,7 +1990,7 @@ var Values = function Values(props) {
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                'Those who prioritizes the common good will always go further.'
+                                'Those who prioritize the common good will always go further.'
                             )
                         )
                     )
@@ -2040,7 +2040,7 @@ var Values = function Values(props) {
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                'Great software is both intuitive and delightful to use, otherwise it won\'t be used at all.'
+                                'Great software is both intuitive and delightful to use, otherwise it wouldn\'t be used at all.'
                             )
                         )
                     )
