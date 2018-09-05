@@ -17,7 +17,7 @@ const Values = (props) => {
                             <div className="value-number text-right">01</div>
                             <div className="value-text text-right">
                                 <strong>Collaboration over competition.</strong>
-                                <p>The greatest men didn't make it on their own, they stood on the shoulders of those around them.</p>
+                                <p>The greatest among us didn't make it on their own, they stood on the shoulders of those around them.</p>
                             </div>
                         </div>
                         <div className="col-sm-6 col-12">

@@ -26,7 +26,7 @@ const About = (props) => {
                     </p>
                     <br />
                     <p>
-                        When I'm off the clock, I enjoy catching waves in the big blue, time spent with my wife or a good adventure novel.
+                        When I'm off the clock, I enjoy catching waves in the big blue, time spent with my awesome wife or a good adventure novel.
                     </p>
                 </div>
             </div>

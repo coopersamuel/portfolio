@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoMarkGithub } from 'react-icons/lib/go';
-import { FaLinkedinSquare } from 'react-icons/lib/fa';
+import { FaLinkedinSquare, FaTwitter } from 'react-icons/lib/fa';
 import { MdMailOutline, MdKeyboardArrowDown } from 'react-icons/lib/md';
 
 import './intro.scss';
@@ -78,6 +78,7 @@ class Intro extends React.Component {
                             <a className="icon-link" href="mailto:cooper.samuel22@gmail.com"><MdMailOutline className="mr-3" size={30} /></a>
                             <a className="icon-link" target="_blank" href="https://github.com/coopersamuel"><GoMarkGithub className="mr-3" size={27} /></a>
                             <a className="icon-link" target="_blank" href="https://www.linkedin.com/in/samuel-cooper-b81945a5/"><FaLinkedinSquare className="mr-3" size={28} /></a>
+                            <a className="icon-link" target="_blank" href="https://twitter.com/_coopersamuel"><FaTwitter className="mr-3" size={28} /></a>                            
                         </div>
                     </div>
                     <div className={`scroll-indicator ${isScrolled ? 'hide' : ''}`}>
