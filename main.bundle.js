@@ -292,7 +292,7 @@ var About = function About(props) {
                 _react2.default.createElement(
                     'p',
                     null,
-                    'When I\'m off the clock, I enjoy catching waves in the big blue, time spent with my wife or a good adventure novel.'
+                    'When I\'m off the clock, I enjoy catching waves in the big blue, time spent with my awesome wife or a good adventure novel.'
                 )
             )
         )
@@ -989,6 +989,11 @@ var Intro = function (_React$Component) {
                                 'a',
                                 { className: 'icon-link', target: '_blank', href: 'https://www.linkedin.com/in/samuel-cooper-b81945a5/' },
                                 _react2.default.createElement(_fa.FaLinkedinSquare, { className: 'mr-3', size: 28 })
+                            ),
+                            _react2.default.createElement(
+                                'a',
+                                { className: 'icon-link', target: '_blank', href: 'https://twitter.com/_coopersamuel' },
+                                _react2.default.createElement(_fa.FaTwitter, { className: 'mr-3', size: 28 })
                             )
                         )
                     ),
@@ -1967,7 +1972,7 @@ var Values = function Values(props) {
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                'The greatest men didn\'t make it on their own, they stood on the shoulders of those around them.'
+                                'The greatest among us didn\'t make it on their own, they stood on the shoulders of those around them.'
                             )
                         )
                     ),
