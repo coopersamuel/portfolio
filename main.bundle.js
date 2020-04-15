@@ -4,12 +4,13 @@
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
 /******/ 		var executeModules = data[2];
+/******/
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
 /******/ 				resolves.push(installedChunks[chunkId][0]);
 /******/ 			}
 /******/ 			installedChunks[chunkId] = 0;
@@ -20,6 +21,7 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
@@ -44,6 +46,7 @@
 /******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
 /******/ 			}
 /******/ 		}
+/******/
 /******/ 		return result;
 /******/ 	}
 /******/
@@ -56,11 +59,6 @@
 /******/ 	var installedChunks = {
 /******/ 		"main": 0
 /******/ 	};
-/******/
-/******/ 	// script path function
-/******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".bundle.js"
-/******/ 	}
 /******/
 /******/ 	var deferredModules = [];
 /******/
@@ -98,17 +96,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -208,7 +221,7 @@ module.exports = __webpack_require__.p + "afb66ab93a65ec1a8fd330b4452e5aa3.svg";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -220,83 +233,71 @@ __webpack_require__(/*! ./about.scss */ "./src/components/about/about.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About(props) {
-    return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'hidden element', id: 'element_2' },
+    _react2.default.createElement(
+      'div',
+      { className: 'hidden-title pb-3' },
+      'About Me'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'row align-items-top' },
+      _react2.default.createElement(
         'div',
-        { className: 'hidden element', id: 'element_2' },
+        { className: 'col-4 title' },
         _react2.default.createElement(
-            'div',
-            { className: 'hidden-title pb-3' },
-            'About Me'
-        ),
-        _react2.default.createElement(
-            'div',
-            { className: 'row align-items-top' },
-            _react2.default.createElement(
-                'div',
-                { className: 'col-4 title' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'title-align' },
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'title-rotate' },
-                        'about me'
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'col about-content' },
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    'I started writing code several years ago with ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'C++'
-                    ),
-                    '. Now, I build fullstack ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'JavaScript'
-                    ),
-                    ' applications using a host of modern technologies. Currently, I work fulltime as a software engineer for ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'General Dynamics'
-                    ),
-                    ' where I build applications for the US Centers for Disease Control in ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Atlanta, GA'
-                    ),
-                    '. I have my Bachelor\'s in Electrical Engineering and am pursuing a Master\'s in Computer Science at ',
-                    _react2.default.createElement(
-                        'strong',
-                        null,
-                        'Georgia Tech'
-                    ),
-                    '.'
-                ),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    'I\'m driven to develop scalable, clean and efficient code while also delivering an excellent experience to my users. With a passion for people, I seek to impact society through the creation of excellent software with real world functionality.'
-                ),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    'When I\'m off the clock, I enjoy catching waves in the big blue, time spent with my awesome wife or a good adventure novel.'
-                )
-            )
+          'div',
+          { className: 'title-align' },
+          _react2.default.createElement(
+            'span',
+            { className: 'title-rotate' },
+            'about me'
+          )
         )
-    );
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'col about-content' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'With proficiencies in software architecture and design, I build fullstack ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'JavaScript'
+          ),
+          ' applications using a host of modern technologies. Located in ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'Hawai\'i'
+          ),
+          ', I work remotely as a software engineer for ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'UpMetrics'
+          ),
+          ', a tech startup focused on empowering non-profits and philanthropists through data analytics.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'I\'m driven to develop scalable, clean and efficient code while also delivering an excellent experience to my users. With a passion for people, I seek to impact society through the creation of excellent software with real world functionality.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          'When I\'m off the clock, I enjoy catching waves in the big blue, time spent with my awesome wife or a good adventure novel.'
+        )
+      )
+    )
+  );
 };
 
 exports.default = About;
@@ -480,7 +481,7 @@ exports.default = Contact;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -504,307 +505,482 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Experience = function (_React$Component) {
-    _inherits(Experience, _React$Component);
+  _inherits(Experience, _React$Component);
 
-    function Experience(props) {
-        _classCallCheck(this, Experience);
+  function Experience(props) {
+    _classCallCheck(this, Experience);
 
-        var _this = _possibleConstructorReturn(this, (Experience.__proto__ || Object.getPrototypeOf(Experience)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Experience.__proto__ || Object.getPrototypeOf(Experience)).call(this, props));
 
-        _this.state = {
-            collapseGDIT: false,
-            collapseEaton: true,
-            collapseBike: true,
-            collapseFK: true
-        };
-        return _this;
-    }
+    _this.state = {
+      collapseGDIT: true,
+      collapseEaton: true,
+      collapseBike: true,
+      collapseMetro: true,
+      collapseVentera: true,
+      collapseUpM: false,
+      collapseShaka: true
+    };
+    return _this;
+  }
 
-    _createClass(Experience, [{
-        key: "render",
-        value: function render() {
-            var _this2 = this;
+  _createClass(Experience, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
 
-            return _react2.default.createElement(
-                "div",
-                { className: "hidden element", id: "element_4" },
+      return _react2.default.createElement(
+        'div',
+        { className: 'hidden element', id: 'element_4' },
+        _react2.default.createElement(
+          'div',
+          { className: 'hidden-title pb-3' },
+          'Experience'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row align-items-top' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-4 title' },
+            _react2.default.createElement(
+              'div',
+              { className: 'title-align' },
+              _react2.default.createElement(
+                'span',
+                { className: 'title-rotate' },
+                'experience'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col experience-content' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
                 _react2.default.createElement(
-                    "div",
-                    { className: "hidden-title pb-3" },
-                    "Experience"
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_upm',
+                    onClick: function onClick() {
+                      return _this2.setState({ collapseUpM: !_this2.state.collapseUpM });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseUpM ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Fullstack Software Engineer',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
                 ),
                 _react2.default.createElement(
-                    "div",
-                    { className: "row align-items-top" },
+                  'div',
+                  {
+                    className: 'collapse show collapse-content',
+                    id: 'experience_upm'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "col-4 title" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "title-align" },
-                            _react2.default.createElement(
-                                "span",
-                                { className: "title-rotate" },
-                                "experience"
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "col experience-content" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "experience-title", "data-toggle": "collapse", "data-target": "#experience_GDIT",
-                                        onClick: function onClick() {
-                                            return _this2.setState({ collapseGDIT: !_this2.state.collapseGDIT });
-                                        } },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseGDIT ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "experience-underline-container" },
-                                        "Fullstack Software Engineer",
-                                        _react2.default.createElement("div", { className: "experience-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse show collapse-content", id: "experience_GDIT" },
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "experience-name" },
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "General Dynamics"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "In my current role with ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "General Dynamics"
-                                        ),
-                                        ", I build high performance, data heavy applications at the ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "CDC"
-                                        ),
-                                        ", in Atlanta. These apps are geared toward bioinformatics specific functions at CDC and are of great benefit to the public health. Several of the apps that I'm working on have attention from the ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "World Health Organization"
-                                        ),
-                                        " for their potential to aid in the eradication of high profile, worldwide diseases."
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "experience-title", "data-toggle": "collapse", "data-target": "#experience_eaton",
-                                        onClick: function onClick() {
-                                            return _this2.setState({ collapseEaton: !_this2.state.collapseEaton });
-                                        } },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseEaton ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "experience-underline-container" },
-                                        "Software Engineer",
-                                        _react2.default.createElement("div", { className: "experience-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "experience_eaton" },
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "experience-name" },
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Eaton"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Throughout my time with ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Eaton"
-                                        ),
-                                        ", I was involved in the design and implementation of ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "IoT"
-                                        ),
-                                        " lighting solutions. Eaton's enterprise solutions help business leaders keep a finger on the pulse of their company by providing insight into power draw and management, usage and location of business assets and more. With Eaton, I was an integral part in the development of ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "web and mobile applications"
-                                        ),
-                                        " that provided a user interface to Eaton's complex IoT system."
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "experience-title", "data-toggle": "collapse", "data-target": "#experience_bike",
-                                        onClick: function onClick() {
-                                            return _this2.setState({ collapseBike: !_this2.state.collapseBike });
-                                        } },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseBike ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "experience-underline-container" },
-                                        "Computer Engineer + Team Lead",
-                                        _react2.default.createElement("div", { className: "experience-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "experience_bike" },
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "experience-name" },
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Engineering Design Competition"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Several years back as a part of a design competition, I led a team of software and electrical engineers in a small project with the goal of developing a ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Bicycle Training Computer"
-                                        ),
-                                        ". This computer gathered ride-time data and performed post-ride analysis on the cyclist's performance. Cyclists could use the system to track their total mileage, max speed, etc. Out of the five projects entered in the competition, ours won the award for ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "most innovative"
-                                        ),
-                                        "."
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "experience-title", "data-toggle": "collapse", "data-target": "#experience_FK",
-                                        onClick: function onClick() {
-                                            return _this2.setState({ collapseFK: !_this2.state.collapseFK });
-                                        } },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseFK ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "experience-underline-container" },
-                                        "Engineering Intern",
-                                        _react2.default.createElement("div", { className: "experience-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "experience_FK" },
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "experience-name" },
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Fresenius Kabi"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "In an internship with ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Fresenius Kabi"
-                                        ),
-                                        ", an international health technologies company, I developed a system for scoring suppliers based on a diverse set of acceptance criteria. I wrote a program to automate the scoring process and save time for the quality engineers that needed to undergo this otherwise tedious process."
-                                    )
-                                )
-                            )
-                        )
+                      'strong',
+                      null,
+                      'UpMetrics'
                     )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'In my current role at ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'UpMetrics'
+                    ),
+                    ', I work alongside a distributed team building a complex data analytics platform. UpMetrics is a powerful tool for non-profit organizations and foundations to track, collect and analyze data. The platform allows users to visualize metrics, track progress towards goals and tell their story within the impact sector. UpMetrics is the first analytics platform of its kind, allowing organizations to upload data',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'of any structure'
+                    ),
+                    ' rather than forcing a structure upon the user.'
+                  )
                 )
-            );
-        }
-    }]);
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_ventera',
+                    onClick: function onClick() {
+                      return _this2.setState({
+                        collapseVentera: !_this2.state.collapseVentera
+                      });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseVentera ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Software Engineer',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'collapse collapse-content',
+                    id: 'experience_ventera'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Ventera'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Strong contributor to a large contract project for',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Center for Medicare and Medicaid'
+                    ),
+                    '. This application took care of managing patients and healthcare providers for medicare. Built with React/Redux on the frontend with a REST microservice architecture on the backend.'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_metro',
+                    onClick: function onClick() {
+                      return _this2.setState({ collapseMetro: !_this2.state.collapseMetro });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseMetro ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Software Lead',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'collapse collapse-content',
+                    id: 'experience_metro'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Metro App'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Co-founded and built ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Metro'
+                    ),
+                    ', an app for finding and sharing restaurant recommendations. Metro is a mobile application built with React Native. Metro\'s server is built on NodeJS with a MongoDB; GraphQL powers the API.'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_GDIT',
+                    onClick: function onClick() {
+                      return _this2.setState({ collapseGDIT: !_this2.state.collapseGDIT });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseGDIT ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Fullstack Software Engineer',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'collapse collapse-content', id: 'experience_GDIT' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'General Dynamics'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'As a contractor at ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'General Dynamics'
+                    ),
+                    ', I built high performance, data heavy applications at the',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'CDC'
+                    ),
+                    ', in Atlanta. These apps are geared toward bioinformatics specific functions at CDC and are of great benefit to the public health. Several of the apps that I\'ve worked on have attention from the',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'World Health Organization'
+                    ),
+                    ' for their potential to aid in the eradication of high profile, worldwide diseases.'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_eaton',
+                    onClick: function onClick() {
+                      return _this2.setState({ collapseEaton: !_this2.state.collapseEaton });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseEaton ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Software Engineer',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'collapse collapse-content',
+                    id: 'experience_eaton'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Eaton'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Throughout my time with ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Eaton'
+                    ),
+                    ', I was involved in the design and implementation of',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'IoT'
+                    ),
+                    ' lighting solutions. Eaton\'s enterprise solutions help business leaders keep a finger on the pulse of their company by providing insight into power draw and management, usage and location of business assets and more. With Eaton, I was an integral part in the development of',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'web and mobile applications'
+                    ),
+                    ' that provided a user interface to Eaton\'s complex IoT system.'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'experience-title',
+                    'data-toggle': 'collapse',
+                    'data-target': '#experience_bike',
+                    onClick: function onClick() {
+                      return _this2.setState({ collapseBike: !_this2.state.collapseBike });
+                    }
+                  },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseBike ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    { className: 'experience-underline-container' },
+                    'Computer Engineer + Team Lead',
+                    _react2.default.createElement('div', { className: 'experience-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'collapse collapse-content', id: 'experience_bike' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'experience-name' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Engineering Design Competition'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Several years back as a part of a design competition, I led a team of software and electrical engineers in a small project with the goal of developing a',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'Bicycle Training Computer'
+                    ),
+                    '. This computer gathered ride-time data and performed post-ride analysis on the cyclist\'s performance. Cyclists could use the system to track their total mileage, max speed, etc. Out of the five projects entered in the competition, ours won the award for',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'most innovative'
+                    ),
+                    '.'
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-    return Experience;
+  return Experience;
 }(_react2.default.Component);
 
 exports.default = Experience;
@@ -1036,7 +1212,7 @@ exports.default = Intro;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1070,589 +1246,422 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Projects = function (_React$Component) {
-    _inherits(Projects, _React$Component);
+  _inherits(Projects, _React$Component);
 
-    function Projects(props) {
-        _classCallCheck(this, Projects);
+  function Projects(props) {
+    _classCallCheck(this, Projects);
 
-        var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this, props));
 
-        _this.state = {
-            collapseTrello: false,
-            collapseMinesweeper: true,
-            collapseAuth: true,
-            collapseJamming: true,
-            collapseSongwriter: true,
-            collapseWeather: true,
-            collapseRavenous: true
-        };
-        return _this;
-    }
+    _this.state = {
+      collapseTrello: false,
+      collapseMinesweeper: true,
+      collapseAuth: true,
+      collapseJamming: true,
+      collapseSongwriter: true,
+      collapseWeather: true,
+      collapseRavenous: true
+    };
+    return _this;
+  }
 
-    _createClass(Projects, [{
-        key: "render",
-        value: function render() {
-            var _this2 = this;
+  _createClass(Projects, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
 
-            return _react2.default.createElement(
-                "div",
-                { className: "hidden element", id: "element_5" },
+      return _react2.default.createElement(
+        'div',
+        { className: 'hidden element', id: 'element_5' },
+        _react2.default.createElement(
+          'div',
+          { className: 'hidden-title pb-3' },
+          'Personal Projects'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row align-items-top' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-4 title' },
+            _react2.default.createElement(
+              'div',
+              { className: 'title-align' },
+              _react2.default.createElement(
+                'span',
+                { className: 'title-rotate' },
+                'sample projects'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col project-content' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
                 _react2.default.createElement(
-                    "div",
-                    { className: "hidden-title pb-3" },
-                    "Personal Projects"
+                  'div',
+                  { className: 'project-name' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseTrello ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    {
+                      className: 'project-underline-container',
+                      'data-toggle': 'collapse',
+                      'data-target': '#project-trello',
+                      onClick: function onClick() {
+                        return _this2.setState({
+                          collapseTrello: !_this2.state.collapseTrello
+                        });
+                      }
+                    },
+                    'Frello',
+                    _react2.default.createElement('div', { className: 'project-underline' })
+                  ),
+                  _react2.default.createElement(
+                    'a',
+                    {
+                      className: 'link pl-3',
+                      target: '_blank',
+                      href: 'https://coopersamuel.github.io/frello/'
+                    },
+                    _react2.default.createElement(_ti.TiLink, { size: 25 })
+                  )
                 ),
                 _react2.default.createElement(
-                    "div",
-                    { className: "row align-items-top" },
+                  'div',
+                  {
+                    className: 'collapse show collapse-content',
+                    id: 'project-trello'
+                  },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Frello is a Trello clone (original, right?), it could be used for tracking todos or managing a project. Creating Frello presented an opportunity for me to flex my JavaScript muscles and learn new technologies such as',
+                    ' ',
                     _react2.default.createElement(
-                        "div",
-                        { className: "col-4 title" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "title-align" },
-                            _react2.default.createElement(
-                                "span",
-                                { className: "title-rotate" },
-                                "projects"
-                            )
-                        )
+                      'strong',
+                      null,
+                      'ReactDnD'
                     ),
+                    ' (for drag and drop functionality). This application uses ',
                     _react2.default.createElement(
-                        "div",
-                        { className: "col project-content" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseTrello ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-trello",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseTrello: !_this2.state.collapseTrello });
-                                            } },
-                                        "Frello",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    ),
-                                    _react2.default.createElement(
-                                        "a",
-                                        { className: "link pl-3", target: "_blank", href: "https://coopersamuel.github.io/frello/" },
-                                        _react2.default.createElement(_ti.TiLink, { size: 25 })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse show collapse-content", id: "project-trello" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Frello is a Trello clone (original, right?), it could be used for tracking todos or managing a project. Creating Frello presented an opportunity for me to flex my JavaScript muscles and learn new technologies such as ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "ReactDnD"
-                                        ),
-                                        " (for drag and drop functionality). This application uses ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Redux"
-                                        ),
-                                        " for application state management. Try tracking some todos with Frello!"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Redux"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "ReactDnD"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Webpack"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Bootstrap"
-                                    ),
-                                    _react2.default.createElement("img", { className: "project-mockup mt-3", src: _frello2.default })
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseMinesweeper ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-minesweeper",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseMinesweeper: !_this2.state.collapseMinesweeper });
-                                            } },
-                                        "MinesweeperJS",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    ),
-                                    _react2.default.createElement(
-                                        "a",
-                                        { className: "link pl-3", target: "_blank", href: "https://coopersamuel.github.io/minesweeperJS/" },
-                                        _react2.default.createElement(_ti.TiLink, { size: 25 })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-minesweeper" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "A from-scratch remix of the classic minesweeper game! This was a fun project that involved both UI design/development and some algorithmic chops. Creating an efficient application state that maintained ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "immutability"
-                                        ),
-                                        " was no easy task. Go ahead and give MinesweeperJS a go, be careful not to step on any mines!"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Redux"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Webpack"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Material"
-                                    ),
-                                    _react2.default.createElement("img", { className: "project-mockup mt-3", src: _minesweeper2.default })
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseAuth ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-auth-graphql",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseAuth: !_this2.state.collapseAuth });
-                                            } },
-                                        "Auth-GraphQL",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-auth-graphql" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "I created Auth-GraphQL to learn the cutting edge new query language ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "GraphQL"
-                                        ),
-                                        ". The application itself is simple, but there's a lot going on in the backend. Auth-GraphQL gave an opportunity to learn authentication with ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "PassportJS"
-                                        ),
-                                        " as well as create a ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "MongoDB"
-                                        ),
-                                        " interface and understand how to query/mutate the data with GraphQL."
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "GraphQL"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "MongoDB"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Apollo"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Express"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "PassportJS"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React Router"
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseJamming ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-jamming",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseJamming: !_this2.state.collapseJamming });
-                                            } },
-                                        "Jamming",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-jamming" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "I created Jamming awhile ago when I was learning ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "React"
-                                        ),
-                                        ". Jamming uses Spotify's external ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "API"
-                                        ),
-                                        " to allow the user to search for songs and create a playlist. The user can then save the playlist to their Spotify account and listen at their leisure."
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Axios"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Sass"
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseSongwriter ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-songwriter",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseSongwriter: !_this2.state.collapseSongwriter });
-                                            } },
-                                        "Songwriter",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-songwriter" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Songwriter is a simple app that lets the user create a song and add lyrics. The lyrics can then be upvoted or liked by subsequent users. This app persists data in a ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "MongoDB"
-                                        ),
-                                        " instance and uses ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "GraphQL"
-                                        ),
-                                        " to access the database."
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "GraphQL"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "MongoDB"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Apollo"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Express"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React Router"
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseWeather ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-weather",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseWeather: !_this2.state.collapseWeather });
-                                            } },
-                                        "Weather",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-weather" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "My first go with ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Redux"
-                                        ),
-                                        ", five-day weather is an application that grabs weather data from the Open Weather ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "API"
-                                        ),
-                                        " and displays it to the user. All the user needs to do is enter a city or location and Five-Day Weather does the rest."
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Redux"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Axios"
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "row pb-5" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "project-name" },
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "triangle-container" },
-                                        _react2.default.createElement(
-                                            "span",
-                                            { className: "" + (this.state.collapseRavenous ? '' : 'rotate-triangle') },
-                                            "\u25B8"
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "strong",
-                                        { className: "project-underline-container", "data-toggle": "collapse", "data-target": "#project-ravenous",
-                                            onClick: function onClick() {
-                                                return _this2.setState({ collapseRavenous: !_this2.state.collapseRavenous });
-                                            } },
-                                        "Ravenous",
-                                        _react2.default.createElement("div", { className: "project-underline" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "collapse collapse-content", id: "project-ravenous" },
-                                    _react2.default.createElement(
-                                        "p",
-                                        null,
-                                        "Ravenous queries the Yelp ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "API"
-                                        ),
-                                        " to find restaurants or businesses based on the user's search preferences. Users can filter their search by best match, most reviewed or highest rating for a flexible and powerful search. Ravenous uses ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "React"
-                                        ),
-                                        " on the front-end and ",
-                                        _react2.default.createElement(
-                                            "strong",
-                                            null,
-                                            "Axios"
-                                        ),
-                                        " for API calls."
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "React"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Axios"
-                                    ),
-                                    _react2.default.createElement(
-                                        "span",
-                                        { className: "tech-item" },
-                                        "Sass"
-                                    )
-                                )
-                            )
-                        )
-                    )
+                      'strong',
+                      null,
+                      'Redux'
+                    ),
+                    ' for application state management. Try tracking some todos with Frello!'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'React'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Redux'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'ReactDnD'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Webpack'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Bootstrap'
+                  ),
+                  _react2.default.createElement('img', { className: 'project-mockup mt-3', src: _frello2.default })
                 )
-            );
-        }
-    }]);
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'project-name' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseMinesweeper ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    {
+                      className: 'project-underline-container',
+                      'data-toggle': 'collapse',
+                      'data-target': '#project-minesweeper',
+                      onClick: function onClick() {
+                        return _this2.setState({
+                          collapseMinesweeper: !_this2.state.collapseMinesweeper
+                        });
+                      }
+                    },
+                    'MinesweeperJS',
+                    _react2.default.createElement('div', { className: 'project-underline' })
+                  ),
+                  _react2.default.createElement(
+                    'a',
+                    {
+                      className: 'link pl-3',
+                      target: '_blank',
+                      href: 'https://coopersamuel.github.io/minesweeperJS/'
+                    },
+                    _react2.default.createElement(_ti.TiLink, { size: 25 })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'collapse collapse-content',
+                    id: 'project-minesweeper'
+                  },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'A from-scratch remix of the classic minesweeper game! This was a fun project that involved both UI design/development and some algorithmic chops. Creating an efficient application state that maintained',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'immutability'
+                    ),
+                    ' was no easy task. Go ahead and give MinesweeperJS a go, be careful not to step on any mines!'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'React'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Redux'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Webpack'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Material'
+                  ),
+                  _react2.default.createElement('img', { className: 'project-mockup mt-3', src: _minesweeper2.default })
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'project-name' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseAuth ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    {
+                      className: 'project-underline-container',
+                      'data-toggle': 'collapse',
+                      'data-target': '#project-auth-graphql',
+                      onClick: function onClick() {
+                        return _this2.setState({ collapseAuth: !_this2.state.collapseAuth });
+                      }
+                    },
+                    'Auth-GraphQL',
+                    _react2.default.createElement('div', { className: 'project-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  {
+                    className: 'collapse collapse-content',
+                    id: 'project-auth-graphql'
+                  },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'I created Auth-GraphQL to learn the cutting edge new query language ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'GraphQL'
+                    ),
+                    '. The application itself is simple, but there\'s a lot going on in the backend. Auth-GraphQL gave an opportunity to learn authentication with ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'PassportJS'
+                    ),
+                    ' as well as create a',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'MongoDB'
+                    ),
+                    ' interface and understand how to query/mutate the data with GraphQL.'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'GraphQL'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'MongoDB'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Apollo'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Express'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'PassportJS'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'React Router'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row pb-5' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'project-name' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'triangle-container' },
+                    _react2.default.createElement(
+                      'span',
+                      {
+                        className: '' + (this.state.collapseJamming ? '' : 'rotate-triangle')
+                      },
+                      '\u25B8'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'strong',
+                    {
+                      className: 'project-underline-container',
+                      'data-toggle': 'collapse',
+                      'data-target': '#project-jamming',
+                      onClick: function onClick() {
+                        return _this2.setState({
+                          collapseJamming: !_this2.state.collapseJamming
+                        });
+                      }
+                    },
+                    'Jamming',
+                    _react2.default.createElement('div', { className: 'project-underline' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'collapse collapse-content', id: 'project-jamming' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'I created Jamming awhile ago when I was learning',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'React'
+                    ),
+                    '. Jamming uses Spotify\'s external',
+                    ' ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      'API'
+                    ),
+                    ' to allow the user to search for songs and create a playlist. The user can then save the playlist to their Spotify account and listen at their leisure.'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'React'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Axios'
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tech-item' },
+                    'Sass'
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-    return Projects;
+  return Projects;
 }(_react2.default.Component);
 
 exports.default = Projects;
@@ -1681,7 +1690,7 @@ exports.default = Projects;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -1693,196 +1702,181 @@ __webpack_require__(/*! ./skills.scss */ "./src/components/skills/skills.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Skills = function Skills(props) {
-    return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'hidden element', id: 'element_3' },
+    _react2.default.createElement(
+      'div',
+      { className: 'hidden-title pb-3' },
+      'Skills'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'row align-items-top' },
+      _react2.default.createElement(
         'div',
-        { className: 'hidden element', id: 'element_3' },
+        { className: 'col-4 title' },
         _react2.default.createElement(
-            'div',
-            { className: 'hidden-title pb-3' },
-            'Skills'
-        ),
+          'div',
+          { className: 'title-align' },
+          _react2.default.createElement(
+            'span',
+            { className: 'title-rotate' },
+            'skills'
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'col skills-content' },
         _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
             'div',
-            { className: 'row align-items-top' },
+            { className: 'col-sm-3 col-6 pb-4' },
             _react2.default.createElement(
-                'div',
-                { className: 'col-4 title' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'title-align' },
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'title-rotate' },
-                        'skills'
-                    )
-                )
+              'div',
+              { className: 'skills-category' },
+              'Languages'
             ),
             _react2.default.createElement(
-                'div',
-                { className: 'col skills-content' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-3 col-6 pb-4' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skills-category' },
-                            'Languages'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'JavaScript'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'TypeScript'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'GraphQL'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'HTML'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'CSS/Sass'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'C/C++'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-3 col-6 pb-4' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skills-category' },
-                            'Libraries'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'React'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Redux'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'React Router'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'React Native'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Bootstrap'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Material Design'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Apollo'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Angular'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-3 col-6' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skills-category' },
-                            'Backend'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Node'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Express'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'MongoDB'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'REST APIs'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Axios'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-3 col-6' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skills-category' },
-                            'Tools'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Babel'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Webpack'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Git'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'Jest'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'skill' },
-                            'CI Servers'
-                        )
-                    )
-                )
+              'div',
+              { className: 'skill' },
+              'JavaScript'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'TypeScript'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'GraphQL'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'ReasonML'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Python'
             )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-sm-3 col-6 pb-4' },
+            _react2.default.createElement(
+              'div',
+              { className: 'skills-category' },
+              'Libraries'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'React'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Redux'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'React Router'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'React Native'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Apollo'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'VueJS'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-sm-3 col-6' },
+            _react2.default.createElement(
+              'div',
+              { className: 'skills-category' },
+              'Backend'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Node'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Express'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'MongoDB'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Prisma'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'REST APIs'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-sm-3 col-6' },
+            _react2.default.createElement(
+              'div',
+              { className: 'skills-category' },
+              'Tools'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Babel'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Webpack'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Git'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'Jest'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'skill' },
+              'CI Servers'
+            )
+          )
         )
-    );
+      )
+    )
+  );
 };
 
 exports.default = Skills;
@@ -2436,7 +2430,7 @@ var App = function (_React$Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! babel-polyfill */"./node_modules/babel-polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! /Users/cooper/Documents/projects/portfolio/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /Users/cooper/projects/personal/portfolio/src/index.js */"./src/index.js");
 
 
 /***/ })
