@@ -52,7 +52,7 @@
     "bootstrap": "^4.4.1",
     "gh-pages": "^1.1.0",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "popper.js": "^1.14.3",
     "scroll-into-view": "^1.9.3",
     "webpack-cli": "^3.3.11"
